@@ -1,0 +1,23 @@
+{% load customtag %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if menu %}
+    <ul>
+        {% for item in menu %}
+            <li><a href="{{ item }}">{{ item }}</a></li>
+        {% endfor %}
+    </ul>
+{% elif menu_name %}
+    <h3><a href="{% url 'main_menu' %}">На главную</a></h3>
+    {% draw_menu menu_name menu_item %}
+{% endif %}
+
+
+</body>
+</html>
